@@ -1,0 +1,147 @@
+// Navbar.scss
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f1cc51;
+  border-bottom: 1px solid #ccc;
+}
+.logo{
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-right: 5px;
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.divs {
+  display: flex;
+  align-items: center;
+  margin-right: 20%;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.navbar-title {
+  font-size: 24px;
+  cursor: pointer;
+  align-items: center;
+  margin-right:20%;
+  font-weight: bold;
+}
+
+.navbar-search-container {
+  margin-right: 20px;
+  
+}
+
+.navbar-search {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #0056b3;
+}
+
+.background-switcher {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
+
+.background-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+      transform: scale(1.1);
+  }
+}
+
+.add-image-button {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  border: none;
+}
+
+.plus-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+.add-image-button {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #007bff; // Change background color as per your requirement
+  color: #fff; // Change text color as per your requirement
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.plus-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 34px;
+}
+
+.custom-file-input {
+  display: none; // Hide the default file input
+}

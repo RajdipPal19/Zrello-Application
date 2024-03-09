@@ -1,0 +1,76 @@
+.card-popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.card-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(122, 122, 122, 0.5);
+    backdrop-filter: blur(5px); 
+    z-index: 999; 
+}
+
+.card-popup-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-popup-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.card-popup-button-primary {
+    background-color: #029922;
+    color: white;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-popup-button-secondary {
+    background-color: #ff5a5f;
+    color: white;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card-popup-button-primary:hover {
+    background-color: #14cc03;
+}
+
+.card-popup-button-secondary:hover {
+    background-color: #fc161e;
+}

@@ -1,0 +1,40 @@
+// .card {
+//     padding: 30px;
+//     background-color: #212121;
+//     border-radius: 10px;
+// }
+.card {
+    background-color: #ffc813;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 16px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card button {
+    background-color: #5aac44;
+    color: #f10707;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #4a9640;
+  }
+  

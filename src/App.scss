@@ -1,0 +1,35 @@
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    color: #070707;
+    font-family: 'Montserrat', Montserrat;
+    background-color: rgb(255, 255, 255);
+    line-height: 1.5;
+    position: relative; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send the background image behind everything */
+    background-size: auto; /* Prevent zooming or scaling of the background image */
+    background-attachment: fixed; /* Keep the background image fixed in the viewport */
+    opacity: calc(10.9);
+}
+
+
+
+

@@ -1,0 +1,209 @@
+.kanban {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+      
+  
+    &__list {
+      background-color: #a5c0c9;
+      border-radius: 3px;
+      padding: 5px;
+      width: 250px;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 2.8);
+    
+  
+      &__title {
+        color: #000f99;
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+       align-items: center;
+      }
+  
+      &__cards {
+        flex: 1;
+        margin-bottom: 10px;
+      }
+  
+      &__card {
+        color: #f81909;
+        background-color: #fffffe;
+        border-radius: 4px;
+        padding: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        overflow-wrap: break-word;
+        box-shadow: 0 12px 14px rgba(0, 0, 0, 0.2);
+  
+        &:hover {
+          background-color: #f1cc51;
+          transform: scale(1.03); 
+        }
+      }
+     
+      &__add-card {
+        background-color: #5aac44;
+        color: #fff6f6;
+        border: none;
+        border-radius: 4px;
+        padding: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+        
+  
+        &:hover {
+          background-color: #4a9640;
+        }
+      }
+    }
+  
+    .kanban__list__counter {
+      color: #000000; 
+      margin-left: 8px;
+  }
+  .deletes {
+    background-color: #ff3333;
+    color: #ffffff;
+    border: none;
+    padding: 8px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-right: 0px;
+    font-weight: bold;
+    
+}
+  .kanban__list__delete {
+    background-color: #ff3333; /* Background color */
+    color: #ffffff; /* Text color */
+    border: none; /* Remove border */
+    padding: 8px 16px; /* Add padding */
+    margin-top: 8px; /* Add margin */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add transition for smoother hover effect */
+    border-radius: 10px;
+
+    /* Hover effect */
+    &:hover {
+        background-color: #cc0000; /* Darken background color on hover */
+    }
+}
+
+  
+    &__add-list {
+      background-color: #5aac44;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #4a9640;
+      }
+    }
+  
+    &__card-popup {
+      background-color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      input[type="text"] {
+        padding: 8px;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #0e0d0d;
+        width: 200px;
+      }
+  
+      button {
+        background-color: #5aac44;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #4a9640;
+        }
+      }
+    }
+
+
+
+
+    
+    .kanban__list__card {
+      position: relative;
+      /* Other styles for your card */
+    
+      .deletes {
+        display: none;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    
+      &:hover .deletes {
+        display: block;
+      }
+    }
+    .kanban__card-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      width: 300px;
+  }
+  
+  .kanban__card-popup input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+  
+  .kanban__card-popup button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+  }
+  
+  .kanban__card-popup button:hover {
+      background-color: #0056b3;
+  }
+  
+  }
+  
