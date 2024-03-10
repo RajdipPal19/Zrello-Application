@@ -15,7 +15,7 @@ const CardPopup = ({ newCardTitle, setNewCardTitle, handleCardCreation, onClose 
 
     return (
         <>
-            <div className="card-popup-overlay" onClick={onClose}></div>
+            <div className="card-popup-overlay" onClick={onClose}> </div>
             <div className="card-popup-container">
                 <h2>  ✏️  Let's add a Task</h2>
                 <input
@@ -31,6 +31,7 @@ const CardPopup = ({ newCardTitle, setNewCardTitle, handleCardCreation, onClose 
                     <button className="card-popup-button card-popup-button-secondary" onClick={handleCancelClick}>Cancel</button>
                 </div>
             </div>
+          
         </>
     );
 };

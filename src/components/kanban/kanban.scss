@@ -23,7 +23,9 @@
         justify-content: space-between;
        align-items: center;
       }
-  
+      
+
+      
       &__cards {
         flex: 1;
         margin-bottom: 10px;
@@ -206,4 +208,86 @@
   }
   
   }
-  
+  .kanban__list__name-button{
+    background-color: #0056b3;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  .save-list-name{
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #45a049;
+    }
+  }
+  .form-control{
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 16px;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(5px); /* Apply blur effect */
+}
+
+.popup {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    background-color: #a5c0c9;
+    padding: 20px;
+    max-width: 300px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    background-color: #0056b3;
+}
+
