@@ -13,17 +13,17 @@ const Kanban = () => {
     const [newCardTitle, setNewCardTitle] = useState('');
     const [activeList, setActiveList] = useState(null);
     const [selectedTask, setSelectedTask] = useState(null);
-    const [showDeleteTaskPopup, setShowDeleteTaskPopup] = useState(false); // State to control the delete task popup
+    const [showDeleteTaskPopup, setShowDeleteTaskPopup] = useState(false); 
 
-    // State for confirmation window
+
     const [showConfirmationWindow, setShowConfirmationWindow] = useState(false);
-    const [itemToDelete, setItemToDelete] = useState(null); // Define itemToDelete state
+    const [itemToDelete, setItemToDelete] = useState(null); 
 
-    // State to track whether list name is being edited or not
+ 
     const [isEditingListName, setIsEditingListName] = useState(null);
-    const [showNotification, setShowNotification] = useState(false); // State for showing notification
+    const [showNotification, setShowNotification] = useState(false);
 
-    // Load data from local storage on component mount
+
     useEffect(() => {
         const storedLists = JSON.parse(localStorage.getItem('Zrello-lists'));
         if (storedLists) {
@@ -39,7 +39,7 @@ const Kanban = () => {
         if (newName.length > 15) {
             setShowNotification(true);
             return;
-        }else if(newName.length==0){
+        }else if(newName.length===0){
             setShowNotification(true);
             return;
         }
@@ -53,10 +53,9 @@ const Kanban = () => {
         setLists(updatedLists);
     };
 
-    // Function to save list name changes
+
     const saveListNameChanges = (listId) => {
-        // Here you can implement your logic to save the changes to the database
-        // For simplicity, I'll just log the changes to the console
+        
         const list = lists.find(list => list.id === listId);
         console.log(`List "${list.title}" (${list.id}) name changed to "${list.title}"`);
     };
@@ -127,12 +126,12 @@ const Kanban = () => {
 
     const handleDeleteList = (listId) => {
         setItemToDelete({ id: listId, type: 'list' });
-        setShowConfirmationWindow(true); // Set showConfirmationWindow to true
+        setShowConfirmationWindow(true);
     };
 
     const handleDeleteCard = (listId, cardId) => {
         setItemToDelete({ listId, cardId, type: 'card' });
-        setShowConfirmationWindow(true); // Set showConfirmationWindow to true
+        setShowConfirmationWindow(true);
     };
 
     const confirmDeleteItem = () => {
@@ -163,7 +162,7 @@ const Kanban = () => {
 
     const handleTaskClick = (task) => {
         setSelectedTask(task);
-        setShowDeleteTaskPopup(false); // Close the delete task popup
+        setShowDeleteTaskPopup(false); 
     };
 
     const Popup = ({ onClose }) => {
@@ -177,14 +176,12 @@ const Kanban = () => {
     
     const handleTaskSave = (editedTask) => {
         if (editedTask.markedForDeletion) {
-            // Task is marked for deletion
             const updatedLists = lists.map(list => ({
                 ...list,
                 cards: list.cards.filter(card => card.id !== editedTask.id)
             }));
             setLists(updatedLists);
         } else {
-            // Task is not marked for deletion
             const updatedLists = lists.map(list => ({
                 ...list,
                 cards: list.cards.map(card => (card.id === editedTask.id ? editedTask : card))
@@ -192,7 +189,7 @@ const Kanban = () => {
             setLists(updatedLists);
         }
 
-        setSelectedTask(null); // Close the TaskDetailsPopup after saving
+        setSelectedTask(null);
     };
 
     return (
@@ -211,7 +208,7 @@ const Kanban = () => {
                                                 value={lists.find(l => l.id === list.id)?.title}
                                                 onChange={e => {
                                                     if (e.target.value.length > 10) {
-                                                        setShowNotification(true); // Show notification if name exceeds 10 characters
+                                                        setShowNotification(true); 
                                                     } else {
                                                         setShowNotification(false);
                                                     }
@@ -234,7 +231,7 @@ const Kanban = () => {
                                             <button className="kanban__list__name-button" onClick={() => setIsEditingListName(list.id)}>
                                                 {lists.find(l => l.id === list.id)?.title}
                                             </button>
-                                            {/* <button className="edit-list-name" onClick={() => setIsEditingListName(list.id)}>Edit</button> */}
+                                           
                                         </>
                                     )}
                                     {!isEditingListName && <div className="kanban__list__counter">Tasks: {list.cards.length}</div>}
@@ -284,24 +281,23 @@ const Kanban = () => {
             {showDeleteTaskPopup && (
                 <ConfirmationWindow
                     taskName="Selected Task"
-                    onDelete={() => { // Handle delete task action
+                    onDelete={() => { 
                         handleDeleteCard(selectedTask.listId, selectedTask.id);
                         setSelectedTask(null);
                         setShowDeleteTaskPopup(false);
                     }}
-                    onCancel={() => setShowDeleteTaskPopup(false)} // Close the delete task popup
+                    onCancel={() => setShowDeleteTaskPopup(false)}
                 />
             )}
             {selectedTask && (
                 <TaskDetailsPopup
                     task={selectedTask}
                     onClose={() => setSelectedTask(null)}
-                    onSave={handleTaskSave} // Pass onSave function to handle saving of edited task
-                    // onDelete={}
+                    onSave={handleTaskSave} 
                     onDelete={confirmDeleteItem}
                 />
             )}
-            {showNotification && <Popup onClose={() => setShowNotification(false)} />} {/* Show notification popup */}
+            {showNotification && <Popup onClose={() => setShowNotification(false)} />} 
         </DragDropContext>
     );
 };

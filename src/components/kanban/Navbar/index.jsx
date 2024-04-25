@@ -68,7 +68,7 @@ function Navbar({ imageOptions, onSelectBackground }) {
                         ))}
                        
                         <label htmlFor="file-input" className="add-image-button">
-                            <span className="plus-icon">+</span>
+                            <span title = "Add from your device" className="plus-icon">+</span>
                         </label>
                         <input type="file" id="file-input" accept="image/*" onChange={handleFileUpload} className="custom-file-input" />
                     </div>
